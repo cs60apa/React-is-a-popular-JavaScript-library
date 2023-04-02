@@ -1,4 +1,5 @@
-{/*
+{
+  /*
 Create a Component with Composition
 Now we will look at how we can compose multiple React components together. Imagine you are building an app and have created three components: a Navbar, Dashboard, and Footer.
 
@@ -17,54 +18,54 @@ In the code editor, there is a simple functional component called ChildComponent
 
 Note: ChildComponent is defined with an ES6 arrow function because this is a very common practice when using React. However, know that this is just a function. If you aren't familiar with the arrow function syntax, please refer to the JavaScript section.
 
-*/}
+*/
+}
 const ChildComponent = () => {
+  return (
+    <div>
+      <p>I am the child</p>
+    </div>
+  );
+};
+
+class ParentComponent extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+  render() {
     return (
       <div>
-        <p>I am the child</p>
+        <h1>I am the parent</h1>
+        {/* Change code below this line */}
+
+        {/* Change code above this line */}
       </div>
     );
-  };
-  
-  class ParentComponent extends React.Component {
-    constructor(props) {
-      super(props);
-    }
-    render() {
-      return (
-        <div>
-          <h1>I am the parent</h1>
-          { /* Change code below this line */ }
-  
-  
-          { /* Change code above this line */ }
-        </div>
-      );
-    }
-  };
+  }
+}
 
 //   solution
 const ChildComponent = () => {
+  return (
+    <div>
+      <p>I am the child</p>
+    </div>
+  );
+};
+
+class ParentComponent extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+  render() {
     return (
       <div>
-        <p>I am the child</p>
+        <h1>I am the parent</h1>
+        {/* Change code below this line */}
+        <ChildComponent />
+
+        {/* Change code above this line */}
       </div>
     );
-  };
-  
-  class ParentComponent extends React.Component {
-    constructor(props) {
-      super(props);
-    }
-    render() {
-      return (
-        <div>
-          <h1>I am the parent</h1>
-          { /* Change code below this line */ }
-  <ChildComponent />
-  
-          { /* Change code above this line */ }
-        </div>
-      );
-    }
-  };
+  }
+}
